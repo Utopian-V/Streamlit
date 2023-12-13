@@ -2,11 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 st.write("Find the largest among the three")
-ValOne = st.text_input('Value One', '0')
 
-ValTwo = st.text_input('Value Two', '0')
+ValOne = st.number_input("Value One",step=1)
 
-ValThree = st.text_input('Value Three', '0')
+ValTwo = st.number_input('Value Two',step=1)
+
+ValThree = st.number_input('Value Three', step=1)
 if (ValOne>ValTwo):
     if (ValOne > ValThree):
         Value = ValOne
@@ -19,7 +20,8 @@ else:
     else:
         Value = ValThree
 
-st.write("Biggest Value is  ", Value)
+if (st.button("Find the largest value")):
+    st.write(Value)
 
     
     
